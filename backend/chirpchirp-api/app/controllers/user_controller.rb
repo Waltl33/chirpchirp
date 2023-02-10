@@ -101,4 +101,16 @@ class UsersController < ApplicationController
         user1 = User.find_by_username(params[:username])
         user1.comments.to_json
     end
+    # creates a friendship to another user
+    post '/flock/:current_user/add/:add_user' do
+        user1 = User.find_by_username(params[:current_user])
+        user2 = User.find_by_username(params[:add_user])
+        Flock.create(flocker_id: user1.id, flockee_id: user2.id).to_json
+    end
+    # deletes a friendship between two users
+    post '/flock/:current_user/remove/:remove_user' do
+        user1 = User.find_by_username(params[:current_user])
+        user2 = User.find_by_username(params[:remove_user])
+       Flock.find_by(flocker_id: user1.id, flockee_id: user2.id).destroy
+    end
 end
