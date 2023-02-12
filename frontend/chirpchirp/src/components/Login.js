@@ -36,14 +36,16 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div id="login-page-container">
         <Header/>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-            <input onChange={handleChange} name="email" type="text" placeholder="Email" value={formData.email} />
-            <input onChange={handleChange} name="password" type="text" placeholder="Password" value={formData.password} />
-            <button type="submit">Login</button>
-        </form>
+        <div id="login-form-container">
+          <h1>Login</h1>
+          <form onSubmit={handleSubmit}>
+              <input onChange={handleChange} name="email" type="text" placeholder="Email" value={formData.email} />
+              <input onChange={handleChange} name="password" type="text" placeholder="Password" value={formData.password} />
+              <button type="submit">Login</button>
+          </form>
+        </div>
     </div>
     
   )

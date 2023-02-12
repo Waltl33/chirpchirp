@@ -10,13 +10,14 @@ export default function Header() {
 
     function checkPage() {
       if (globalState.page === "login") {
-        return <span className="headerSpan"><NavLink to= "/signup"><button className="headerBtn">Sign Up</button></NavLink></span>
+        return <div id="header-btn-wrapper"><NavLink to= "/signup"><button className="headerBtn">Sign Up</button></NavLink></div>
       } else if (globalState.page === "signup") {
-        return <span className="headerSpan"><NavLink to= "/"><button className="headerBtn">Login</button></NavLink></span>
+        return <div id="header-btn-wrapper"><NavLink to= "/"><button className="headerBtn">Login</button></NavLink></div>
       } else if (globalState.isLoggedIn === true) {
-        return <img className="headerImg" src={globalState.pfp}/>
+        return <div id="header-img-wrapper"><img className="headerImg" src={globalState.pfp}/></div>
       } else {
-       return <div>
+       return 
+       <div>
           <NavLink to= "/signup">
             <button className="headerBtn">Sign Up</button>
           </NavLink>
@@ -28,9 +29,13 @@ export default function Header() {
     }
 
   return (
-    <div className="header">
+    <div className="header-container">
+      <div id="logo-wrapper">
         <h1 id="logo">ChirpChirp</h1>
+      </div>
+       <div id="right-header-container">
         {checkPage()}
+      </div>
     </div>
   )
 }

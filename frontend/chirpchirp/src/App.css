@@ -1,9 +1,11 @@
 /* Global */
 #root {
   margin-top: 0px;
+  height: 100vh;
 }
 .App {
   text-align: center;
+  height: 100vh;
 }
 body {
   margin-top: 0px;
@@ -30,7 +32,7 @@ input[type="text"] {
   color: black;
   font-size: 18px;
   margin-bottom: 5px;
-  width: 100%;
+  width: 90%;
   text-align: center;
   border: none;
   display: block;
@@ -38,20 +40,42 @@ input[type="text"] {
 
 button[type="submit"] {
   margin-top: 10px;
+  justify-self: center;
+  align-self: center;
 }
 
 form {
   display: inline-block;
+  justify-self: center;
+  align-content: center;
+  width: 250px;
 }
 
 /* Header */
-.header {
+.header-container {
   margin-top: 0px;
   background-color: #5ADDC8;
-  display: block;
+  display: grid;
+  height: 7vh;
+}
+.header-container > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.header-container> *:last-child {
+  justify-self: right;
+  align-self: center;
+}
+#logo-wrapper {
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+}
+#right-header-container {
+  margin-right: 10px;
 }
 .headerBtn {
-  margin-top: 20px;
+  margin-right: 10px;
 }
 
 .headerSpan {
@@ -61,8 +85,29 @@ form {
 
 #logo {
   margin-top: 0px;
+  margin-bottom: 0px;
   padding: 10px;
-  display: block;
+  align-items: center;
   justify-content: center;
+  
+}
+
+#login-page-container {
+  height: 100vh;
+  display: grid;
+  
+}
+#login-page-container > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+#login-page-container> *:last-child {
+  justify-self: center;
+  align-self: center;
+}
+
+#login-form-container {
+  align-self: center;
+  justify-self: center;
 }
 
