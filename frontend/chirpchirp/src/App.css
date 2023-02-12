@@ -1,0 +1,68 @@
+/* Global */
+#root {
+  margin-top: 0px;
+}
+.App {
+  text-align: center;
+}
+body {
+  margin-top: 0px;
+  background-color: #A3F7F4;
+}
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+button {
+  color: white;
+  background-color: #5C87BC;
+  border-radius: 30px;
+  border: #5C87BC;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Form Styles */
+input[type="text"] {
+  padding: 10px;
+  background-color: #5ADDC8;
+  color: black;
+  font-size: 18px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+  border: none;
+  display: block;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+}
+
+form {
+  display: inline-block;
+}
+
+/* Header */
+.header {
+  margin-top: 0px;
+  background-color: #5ADDC8;
+  display: block;
+}
+.headerBtn {
+  margin-top: 20px;
+}
+
+.headerSpan {
+  display: block;
+  justify-content: right;
+}
+
+#logo {
+  margin-top: 0px;
+  padding: 10px;
+  display: block;
+  justify-content: center;
+}
+
