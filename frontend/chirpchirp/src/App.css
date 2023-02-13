@@ -1,4 +1,8 @@
 /* Global */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   margin-top: 0px;
   height: 100vh;

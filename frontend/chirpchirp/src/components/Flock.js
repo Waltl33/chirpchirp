@@ -1,7 +1,11 @@
 import React from 'react'
+import Nav from './Nav'
 
 export default function Flock() {
   return (
-    <div>Flock</div>
+    <div>
+      <Nav />
+      <header>Flock</header>
+    </div>
   )
 }

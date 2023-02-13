@@ -1,7 +1,11 @@
 import React from 'react'
+import Nav from './Nav'
 
 export default function Settings() {
   return (
-    <div>Settings</div>
+    <div>
+      <Nav/>
+      <h1>Settings</h1>
+    </div>
   )
 }
