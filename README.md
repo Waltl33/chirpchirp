@@ -28,6 +28,10 @@ Sinatra
 7. User can delete their blog post
 8. User can follow friends
 
+# Wireframe
+![Screen Shot 2023-02-13 at 3 05 40 PM](https://user-images.githubusercontent.com/118000976/218563342-84cf8f00-db5e-4814-9363-eeadd48b8e37.png)
+
+
 
 # API Routes 
 ![Screen Shot 2023-02-13 at 2 37 34 PM](https://user-images.githubusercontent.com/118000976/218557254-1e3376df-1fff-40d7-b869-6f9b33f0b618.png)
