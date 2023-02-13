@@ -43,6 +43,12 @@ Sinatra
 
 ![Screen Shot 2023-02-13 at 2 25 28 PM](https://user-images.githubusercontent.com/118000976/218556290-5cd79363-1aba-475a-bdf5-0d0305f98783.png)
 
+# Project Kanban Board
+![Screen Shot 2023-02-13 at 2 38 55 PM](https://user-images.githubusercontent.com/118000976/218557641-8ac9e611-79fc-4816-aa7d-e1c33803329f.png)
 
+# Stretch Goals
+1. Users can like comments
+2. Suggested Friends/Posts
+3. Edit posts
 
 
