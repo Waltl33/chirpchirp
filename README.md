@@ -30,6 +30,7 @@ Sinatra
 
 # REACT Components
 
+![Phase3-Project drawio](https://user-images.githubusercontent.com/27868329/218556581-37b270b1-1a69-44f2-82c6-e75c67d67d96.png)
 
 
 # Backend Schema
