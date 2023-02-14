@@ -1,4 +1,4 @@
 class Flock < ActiveRecord::Base
-    has_many :users
-    belongs_to :user
+    belongs_to :flockee, class_name: 'User'
+    belongs_to :flocker, class_name: 'User'
 end

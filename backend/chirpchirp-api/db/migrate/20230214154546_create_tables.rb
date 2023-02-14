@@ -26,7 +26,8 @@ class CreateTables < ActiveRecord::Migration[5.2]
     end
 
     create_table :flocks do |t|
-      t.integer :user_id
+      t.integer :flocker_id
+      t.integer :flockee_id
       t.timestamps
     end
   end

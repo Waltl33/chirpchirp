@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 2023_02_14_154546) do
   end
 
   create_table "flocks", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "flocker_id"
+    t.integer "flockee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
