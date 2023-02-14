@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 import Nest from './components/Nest.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
@@ -26,7 +26,7 @@ function App() {
             element={<Signup/>}
           />
           <Route 
-            path="/:userId/nest" 
+            path="/:userName/nest" 
             element={<Nest/>}
           />
           <Route 

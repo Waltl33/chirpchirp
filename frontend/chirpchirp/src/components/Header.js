@@ -16,15 +16,14 @@ export default function Header() {
       } else if (globalState.isLoggedIn === true) {
         return <div id="header-img-wrapper"><img className="headerImg" src={globalState.pfp}/></div>
       } else {
-       return 
-       <div>
-          <NavLink to= "/signup">
-            <button className="headerBtn">Sign Up</button>
-          </NavLink>
-          <NavLink to= "/">
-            <button className="headerBtn">Login</button>
-          </NavLink>
-        </div>
+       return <div>
+                <NavLink to= "/signup">
+                  <button className="headerBtn">Sign Up</button>
+                </NavLink>
+                <NavLink to= "/">
+                  <button className="headerBtn">Login</button>
+                </NavLink>
+              </div>
       }
     }
 
