@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'proza-libre': '"Proza Libre"'
+    },
     extend: {},
   },
   plugins: [],

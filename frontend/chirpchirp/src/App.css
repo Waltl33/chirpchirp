@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+
 #root {
   margin-top: 0px;
   height: 100vh;
