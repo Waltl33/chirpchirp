@@ -5,14 +5,14 @@ Flock.destroy_all
 
 puts "Creating Users..."
 # Users 
-U1 = User.create(name: "Dylan", email: "dylan@gmail.com", password: "123456", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 1)
+U1 = User.create(name: "Dylan", username: "TestTest", email: "dylan@gmail.com", password: "123456", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 1)
 
-U2 = User.create(name: "Nadia", email: "nadia@gmail.com", password: "Password", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 2)
+U2 = User.create(name: "Nadia", username: "JohnJohn", email: "nadia@gmail.com", password: "Password", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 2)
 
 
-U3 = User.create(name: "Adam", email: "Adam@gmail.com", password: "NotAPassword", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 3)
+U3 = User.create(name: "Adam", username: "janeJane", email: "Adam@gmail.com", password: "NotAPassword", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 3)
 
-U4 = User.create(name: "Walt", email: "Walt@gmail.com", password: "ThisisAPassword", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 4)
+U4 = User.create(name: "Walt", username: "jackjack", email: "Walt@gmail.com", password: "ThisisAPassword", pfpURL: "thislink.com", bannerURL: "thislink.com", flock_id: 4)
 
 
 # Posts

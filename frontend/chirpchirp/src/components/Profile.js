@@ -5,7 +5,7 @@ import Header from "./Header.js"
 
 export default function Profile() {
   // import params from url
-  const { userName } = useParams();
+  const { username } = useParams();
 
   // initialize Global Context
   const globalState = useContext(GlobalContext);
@@ -20,7 +20,7 @@ export default function Profile() {
       <h6>Logged In as {globalState.username}</h6>
     </> : 
     <>
-     <Header />
+    <Header />
      <h6>Not logged in</h6>
     </>
   )

@@ -6,8 +6,13 @@ class User < ActiveRecord::Base
     has_many :flocking_users, foreign_key: :flockee_id, class_name: 'Flock'
     has_many :flockers, through: :flocking_users
 
+    # Delete a user from the User table
     def delete
         self.destroy
+    end
+
+    def self.name_search(username)
+        User.find_by_username(username)
     end
 
     # add a user to your flocking ie: U1.follow(U2)
