@@ -28,7 +28,7 @@ export default function Header() {
     }
 
   return (
-    <div className="header-container">
+    <div className="header-container" class="font-proza-libre text-7xl font-bold text-left text-purple bg-green">
       <div id="logo-wrapper">
         <h1 id="logo">ChirpChirp</h1>
       </div>
