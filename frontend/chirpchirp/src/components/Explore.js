@@ -5,20 +5,34 @@ import Header from './Header'
 export default function Explore() {
   return (
     <div>
-      <Nav/>
-      <div class="font-proza-libre space-y-4">
+      <div>
         <Header/>
-        <h1 class="text-5xl space-y-4">Explore</h1>
-        <label class="text-2xl space-y-4">Search for Chirps</label>
-        <input
-          type="text"
-          id="search_chirp"
-          placeholder="Search for Chirps"
-          class="rounded"
-        />
+        <Nav/>
+      </div>
+      <div class="font-proza-libre text-purple ml-40">
+        <h1 class="text-5xl font-bold p-4">Explore</h1>
+        <div class="flex justify-center">
+          <div class="mb-3 xl:w-96">
+            <label class="form-label inline-block mb-2 text-2xl">Search for Chirps</label>
+              <input
+                  type="search"
+                  id="searchChirp"
+                  placeholder="Search for Chirps"
+                  class="
+                    flex items-center max-w-md mx-auto
+                    form-control
+                    block
+                    px-3
+                    py-1.5
+                    rounded
+                    transition
+                    ease-in-out"
+              />
+          </div>
+        </div>
       </div>
       <div>
-        {/* trending chirps */}
+        {/* display trending chirps */}
       </div>
     </div>
   )
