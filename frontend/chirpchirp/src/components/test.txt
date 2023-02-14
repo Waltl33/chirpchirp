@@ -1,0 +1,23 @@
+Users:
+-userID
+-userPosts = hasmany posts 
+-userFlock = 
+-pfpUrl
+-name
+-email
+-password <--- Hashify this so its unhackable
+-bannerUrl
+
+posts:
+-postId
+-userId
+-likes
+-timestamp
+hasmany users through comments
+
+comments:
+belongs to post
+belong to user 
+-postId
+-userId
+-timestamp
