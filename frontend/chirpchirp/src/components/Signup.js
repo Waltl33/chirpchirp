@@ -31,15 +31,49 @@ export default function SignUp() {
   //handle Sign Up form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password !== formData.password2) {
-      console.log('Passwords do not match')
-    } else if (formData.password.length < 5) {
-      console.log('Password is too shot')
-    } else {
-      globalState.name = formData.name
-      globalState.isLoggedIn = true
-      navigate(`/${globalState.name}`)
-    }
+
+    fetch(`http://localhost:9292/usernames/${formData.username}`)
+    .then(res => res.json())
+    .then((userData) => {
+      console.log(userData);
+      if (userData !== null) {
+        alert("Username already exists!")
+      } else {
+
+        if (formData.password !== formData.password2) {
+          alert('Passwords do not match')
+        } else if (formData.password.length < 5) {
+          alert('Password is too short')
+        } else {
+            fetch('http://localhost:9292/users', {
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              method: 'POST',
+              body: JSON.stringify({
+                "name": formData.name,
+                "email": formData.email,
+                "username": formData.username,
+                "password": formData.password,
+                "pfpURL": "",
+                "bannerURL": ""
+              })
+            })
+            .then(res => res.json())
+            .then((userData) => {
+              globalState.isLoggedIn = true;
+              globalState.userId = userData.id;
+              globalState.username = userData.username;
+              globalState.name = userData.name;
+              globalState.email = userData.email;
+              globalState.banner = userData.bannerURL;
+              globalState.pfp = userData.pfpURL;
+              navigate(`/${formData.name}`)
+            })
+        }
+      }
+    })
   };
   return (
     <div>

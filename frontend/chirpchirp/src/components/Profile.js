@@ -7,7 +7,7 @@ import Settings from './Settings.js'
 
 export default function Profile() {
   // import params from url
-  const { userName } = useParams();
+  const { username } = useParams();
 
   // initialize Global Context
   const globalState = useContext(GlobalContext);
