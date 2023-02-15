@@ -1,14 +1,15 @@
-import { React, useContext, useState } from 'react'
+import { React, useContext, useState, useEffect } from 'react'
 import { GlobalContext } from "../context/user";
 import { useNavigate } from 'react-router-dom';
 import Header from './Header.js';
 
 export default function Login() {
+
     //allow navigation
     const navigate = useNavigate();
     // initial form state
     const initialState = {
-      email: "",
+      username: "",
       password: ""
     }
     //form state initialization
@@ -26,13 +27,29 @@ export default function Login() {
   }
 
 
-  //test for name
-  globalState.username = 'test';
   //handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    globalState.isLoggedIn = true;
-    navigate(`/${globalState.username}`)
+
+    //fetch users from database by username inputed
+    fetch(`http://localhost:9292/usernames/${formData.username}`)
+    .then(res => res.json())
+    .then(userData => {
+      if (userData === null) {
+        alert("User not found");
+      } else if (userData.password !== formData.password) {
+        alert("Password is incorrect");
+      } else if (userData.username === formData.username && userData.password === formData.password) {
+        globalState.isLoggedIn = true;
+        globalState.userId = userData.id;
+        globalState.username = userData.username;
+        globalState.name = userData.name;
+        globalState.email = userData.email;
+        globalState.banner = userData.bannerURL;
+        globalState.pfp = userData.pfpURL;
+        navigate(`/${globalState.username}`)
+      }
+    })
   }
 
   return (
@@ -41,7 +58,7 @@ export default function Login() {
         <div id="login-form-container">
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
-              <input onChange={handleChange} name="email" type="text" placeholder="Email" value={formData.email} />
+              <input onChange={handleChange} name="username" type="text" placeholder="Username" value={formData.email} />
               <input onChange={handleChange} name="password" type="text" placeholder="Password" value={formData.password} />
               <button type="submit">Login</button>
           </form>
