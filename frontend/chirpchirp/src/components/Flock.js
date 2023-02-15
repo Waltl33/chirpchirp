@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './Nav'
 import Header from './Header'
 
+
 export default function Flock() {
   return (
     <div>
@@ -17,16 +18,8 @@ export default function Flock() {
               <input
                   type="search"
                   id="addToFlock"
-                  placeholder="Add Followers"
-                  class="
-                    flex items-center max-w-md mx-auto
-                    form-control
-                    block
-                    px-3
-                    py-1.5
-                    rounded
-                    transition
-                    ease-in-out"
+                  placeholder="Search For Chirpers"
+                  class="rounded p-3 mx-1 mr-4 bg-green w-80 h-15 text-center text-lg text-purple"
               />
           </div>
         </div>

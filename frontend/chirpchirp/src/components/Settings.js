@@ -17,35 +17,67 @@ export default function Settings() {
 
   };
 
-
-
   return (
-    <><div>
-      <Header />
-      <Nav />
-      <h1 class="font-proza-libre text-6xl font-bold text-center text-purple">Settings</h1>
-    </div><form onSubmit={handleSubmit}>
+    <>
+      <div>
+        <Header />
+        <Nav />
+        <h1 class="font-proza-libre text-6xl font-bold text-center text-purple p-4 ml-40">Settings</h1>
+      </div>
+    <div class="font-proza-libre text-purple ml-40">
+      <form onSubmit={handleSubmit}>
         <div>
-          <label>Profile Image URL:</label>
-          <input type="text" value={profileImage} onChange={(e) => setProfileImage(e.target.value)} />
+          <label class="text-xl p-5">Name:</label>
+          <input 
+            type="text" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)}
+            class="rounded mx-1 bg-green text-purple"
+          />
         </div>
         <div>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <label class="text-xl p-5">E-mail:</label>
+          <input 
+            type="text" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)}
+            class="rounded mx-1 p-5 bg-green text-purple"
+          />
         </div>
         <div>
-          <label>E-mail:</label>
-          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <label class="text-xl p-5">Password:</label>
+          <input 
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            class="rounded p-3 mx-1 mr-4 bg-green w-56 h-15 text-purple"
+          />
         </div>
         <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <label class="text-xl p-5">Profile Image URL:</label>
+          <input 
+            type="text" 
+            value={profileImage} 
+            onChange={(e) => setProfileImage(e.target.value)}
+            class="rounded mx-1 bg-green text-purple"
+          />
         </div>
         <div>
-          <label>Banner URL:</label>
-          <input type="text" value={bannerImage} onChange={(e) => setBannerImage(e.target.value)} />
+          <label class="text-xl p-5">Banner URL:</label>
+          <input 
+            type="text" 
+            value={bannerImage} 
+            onChange={(e) => setBannerImage(e.target.value)}
+            class="rounded mx-1 bg-green text-purple"
+          />
         </div>
-        <button type="submit">Save</button>
-      </form></>
+        <button 
+          type="submit"
+          class="text-purple  hover:text-green text-4xl font-bold text-purple"
+          > Save
+        </button>
+      </form>
+    </div>
+    </>
   )
 }

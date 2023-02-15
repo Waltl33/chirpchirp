@@ -18,15 +18,7 @@ export default function Explore() {
                   type="search"
                   id="searchChirp"
                   placeholder="Search for Chirps"
-                  class="
-                    flex items-center max-w-md mx-auto
-                    form-control
-                    block
-                    px-3
-                    py-1.5
-                    rounded
-                    transition
-                    ease-in-out"
+                  class="rounded p-3 mx-1 mr-4 bg-green w-80 h-15 text-center text-lg text-purple"
               />
           </div>
         </div>
