@@ -68,14 +68,16 @@ export default function Login() {
                 value={formData.email}
                 class="rounded p-3 mx-1 mr-4 bg-blue h-15 m-6 text-center"
               />
-              <input
-                onChange={handleChange}
-                name="password"
-                type="password"
-                placeholder="Password"
-                value={formData.password}
-                class="rounded p-3 mx-1 mr-4 bg-blue w-56 h-15 m-5 text-center text-lg"
-              />
+              <div>
+                <input
+                  onChange={handleChange}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={formData.password}
+                  class="rounded p-3 mx-1 mr-4 bg-blue w-56 h-15 m-5 text-center text-lg"
+                />
+              </div>
               <button
                 type="submit"
                 class="text-purple  hover:text-blue text-4xl font-bold p-5"
@@ -85,5 +87,6 @@ export default function Login() {
           </div>
         </div>
     </div>
+
   )
 }

@@ -9,12 +9,13 @@ export default function Nav() {
     const name = globalState.username
     const flockLink = "/" + name + "/flock"
     const settingsLink = "/" + name + "/settings"
+    const nestLink = "/" + name + "/nest"
 
   return (
     <div class="text-2xl text-white w-60 h-full shadow-md bg-purple px-1 absolute font-proza-libre p-10">
         <ul class="relative">
             <li class="relative p-5 hover:text-blue">
-                <NavLink to="/nest" >🪺 Nest</NavLink>
+                <NavLink to={nestLink} >🪺 Nest</NavLink>
             </li>
             <li class="relative p-5 hover:text-blue">
                 <NavLink to="/explore">#️⃣ Explore</NavLink>
