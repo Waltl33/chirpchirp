@@ -32,13 +32,14 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:9292/usernames/${formData.username}`)
+    fetch(`http://localhost:9292/${formData.username}`)
     .then(res => res.json())
     .then((userData) => {
       console.log(userData);
       if (userData !== null) {
         alert("Username already exists!")
-      } else {
+      } 
+      else if (userData === null) {
 
         if (formData.password !== formData.password2) {
           alert('Passwords do not match')
@@ -56,8 +57,8 @@ export default function SignUp() {
                 "email": formData.email,
                 "username": formData.username,
                 "password": formData.password,
-                "pfpURL": "",
-                "bannerURL": ""
+                "pfpURL": null,
+                "bannerURL": null
               })
             })
             .then(res => res.json())
@@ -69,9 +70,12 @@ export default function SignUp() {
               globalState.email = userData.email;
               globalState.banner = userData.bannerURL;
               globalState.pfp = userData.pfpURL;
-              navigate(`/${formData.name}`)
+              console.log(userData);
+              navigate(`/${formData.username}`)
             })
         }
+      } else {
+        alert("Error Occured")
       }
     })
   };

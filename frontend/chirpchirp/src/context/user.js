@@ -11,7 +11,6 @@ function GlobalProvider({ children }) {
         name: null,
         email: null,
         banner: null,
-        
         pfp: null
     }
 
