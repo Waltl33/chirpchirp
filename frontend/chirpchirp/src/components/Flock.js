@@ -17,7 +17,7 @@ export default function Flock() {
               <input
                   type="search"
                   id="addToFlock"
-                  placeholder="Add Followers"
+                  placeholder="Search For Chirpers"
                   class="
                     flex items-center max-w-md mx-auto
                     form-control
