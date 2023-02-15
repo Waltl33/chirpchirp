@@ -12,16 +12,10 @@ class UsersController < ApplicationController
         user.to_json
     end
 
-    #find by ID
-    get '/users/:userId' do
-        user1 = User.find(params[:userId])
-
-        user1.to_json
-    end
 
     # update user from database
-    patch '/users/:userId' do
-        user1 = User.find(params[:userId])
+    patch '/users/:username' do
+        user1 = User.find_by_username(params[:username])
 
         if (params[:name] != nil) 
             user1.update_attributes(name: params[:name])
@@ -52,7 +46,7 @@ class UsersController < ApplicationController
     end
 
     #delete user from database
-    delete '/users/:userId' do
+    delete '/users/:username' do
         user1 = User.find(params[:userId])
         user1.posts.destroy
         user1.comments.destroy
@@ -61,33 +55,38 @@ class UsersController < ApplicationController
     end
 
     #find by username
-    get '/:username' do
+    get '/user/:username' do
         user1 = User.find_by_username(params[:username])
         user1.to_json
     end
 
     #grab a users posts
-    get '/:username/posts' do
+    get '/user/:username/posts' do
         user1 = User.find_by_username(params[:username])
         user1.posts.to_json
     end
+    # create a users post
+    post '/user/:username/posts' do
+        user1 = User.find_by_username(params[:username])
+       Post.create(content: params[:content], likes: 0, user_id: user1.id)
+    end
 
     #grab users followers
-    get '/:username/flockers' do
+    get '/user/:username/flockers' do
         user1 = User.find_by_username(params[:username])
         output = user1.flockers
         output.to_json
     end
 
     #grab users following
-    get '/:username/flockees' do
+    get '/user/:username/flockees' do
         user1 = User.find_by_username(params[:username])
         output = user1.flockees
         output.to_json
     end
 
     #grab all followings posts
-    get '/:username/flock/posts' do
+    get '/user/:username/flock/posts' do
         user1 = User.find_by_username(params[:username])
         flock = user1.flockees
         output = []
@@ -95,5 +94,11 @@ class UsersController < ApplicationController
             output << user.posts
         end
         output.to_json
+    end
+
+    #get a users comments
+    get '/user/:username/comments' do
+        user1 = User.find_by_username(params[:username])
+        user1.comments.to_json
     end
 end

@@ -33,7 +33,7 @@ export default function Login() {
     e.preventDefault();
 
     //fetch users from database by username inputed
-    fetch(`http://localhost:9292/usernames/${formData.username}`)
+    fetch(`http://localhost:9292/${formData.username}`)
     .then(res => res.json())
     .then(userData => {
       if (userData === null) {
