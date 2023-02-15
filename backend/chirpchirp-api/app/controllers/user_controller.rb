@@ -22,7 +22,32 @@ class UsersController < ApplicationController
     # update user from database
     patch '/users/:userId' do
         user1 = User.find(params[:userId])
-        user1.update_attributes()
+
+        if (params[:name] != nil) 
+            user1.update_attributes(name: params[:name])
+        end
+
+        if (params[:username] != nil)
+            user1.update_attributes(username: params[:username])
+        end
+
+        if (params[:email] != nil)
+            user1.update_attributes(email: params[:email])
+        end
+
+        if (params[:password] != nil)
+            user1.update_attributes(password: params[:password])
+        end
+
+        if (params[:pfpURL] != nil)
+            user1.update_attributes(pfpURL: params[:pfpURL])
+        end
+
+        if (params[:bannerURL] != nil)
+            user1.update_attributes(bannerURL: params[:bannerURL])
+        end
+
+        user1.save
         user1.to_json
     end
 
@@ -41,9 +66,34 @@ class UsersController < ApplicationController
         user1.to_json
     end
 
-    # #Find by Email
-    # get '/email/:email' do
-    #     user1 = User.find_by_email(params[:email])
-    #     user1.to_json
-    # end
+    #grab a users posts
+    get '/:username/posts' do
+        user1 = User.find_by_username(params[:username])
+        user1.posts.to_json
+    end
+
+    #grab users followers
+    get '/:username/flockers' do
+        user1 = User.find_by_username(params[:username])
+        output = user1.flockers
+        output.to_json
+    end
+
+    #grab users following
+    get '/:username/flockees' do
+        user1 = User.find_by_username(params[:username])
+        output = user1.flockees
+        output.to_json
+    end
+
+    #grab all followings posts
+    get '/:username/flock/posts' do
+        user1 = User.find_by_username(params[:username])
+        flock = user1.flockees
+        output = []
+        flock.each do |user|
+            output << user.posts
+        end
+        output.to_json
+    end
 end

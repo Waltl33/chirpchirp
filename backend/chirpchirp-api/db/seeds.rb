@@ -45,11 +45,11 @@ C3 = Comment.create(content: "this post is splendid", likes: 100, user_id: U3.id
 C4 = Comment.create(content: "Go home.", likes: 9, user_id: U4.id, post_id: P6.id)
 
 
-# F1 = Flock.create(flocker_id: U2.id)
-# F5 = Flock.create(user_id: U2.id)
-# F2 = Flock.create(user_id: U1.id)
-# F3 = Flock.create(user_id: U4.id)
-# F4 = Flock.create(user_id: U3.id)
+F1 = Flock.create(flocker_id: U2.id, flockee_id: U1.id)
+F5 = Flock.create(flocker_id: U2.id, flockee_id: U3.id)
+F2 = Flock.create(flocker_id: U1.id, flockee_id: U2.id)
+F3 = Flock.create(flocker_id: U3.id, flockee_id: U2.id)
+F4 = Flock.create(flocker_id: U1.id, flockee_id: U3.id)
 
 
 
