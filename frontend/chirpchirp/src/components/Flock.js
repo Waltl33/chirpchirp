@@ -25,7 +25,7 @@ export default function Flock() {
         </div>
       </div>
       <div>
-        {/* display trending chirps */}
+        {/* display user & users flock chirps */}
       </div>
     </div>
   )

@@ -8,18 +8,17 @@ export default function Chirp() {
   const { userName, chirpId } = useParams(); 
 
   return (
-    <><div>
-      <Header />
-      <Nav />
-      <h1>Chirp</h1>
-
-    </div><div>
-      <h2>Date and Time</h2>
-      
-      <p>UserName = {userName}</p>
-      <p>ChirpId = {chirpId}</p>
-
-
-      </div></>
+    <div>
+      <div>
+        <Header/>
+        <Nav/>
+      </div>
+      <div>
+        {/* Individual Chirp */}
+        <p>Date & Time</p>
+        <p>Posted By: {userName}</p>
+        <p>ChirpId: {chirpId} </p>
+      </div>
+    </div>
   )
 }
