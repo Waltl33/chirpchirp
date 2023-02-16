@@ -1,9 +1,8 @@
-import {React, useContext, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import {React, useContext, useState, useEffect } from 'react'
 import { GlobalContext } from '../context/user.js'
 import Header from "./Header.js"
 import Nav from './Nav.js'
-import Settings from './Settings.js'
+import ChirpList from './ChirpList.js'
 
 export default function Profile() {
 
@@ -16,7 +15,9 @@ export default function Profile() {
   const initialState = {
     content: "",
     likes: 0,
-    user_id: globalState.userId
+    user_id: globalState.userId,
+    username: globalState.userName,
+    pfpURL: globalState.pfp
   }
   //create state for Chirp Form
   const [formData, setFormData] = useState(initialState);
@@ -25,9 +26,12 @@ export default function Profile() {
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
   }
+  //list state for Chirp List
+  const [list, setList] = useState([])
 
   //handle chirp form submit
   const handleSubmit = (e) => {
+    e.preventDefault();
     fetch(`http://localhost:9292/user/${globalState.username}/posts`, {
       headers: {
         'Accept': 'application/json',
@@ -36,13 +40,26 @@ export default function Profile() {
       method: 'POST',
       body: JSON.stringify(formData)
     }).then(res => res.json())
-    .then(obj => console.log(obj));
+    .then(obj => {
+      let newList = list.shift(obj)
+      setList(newList)
+    });
   }
-  
+
+  //fetch users posts to pass to ChirpList
+  useEffect(() => {
+    fetch(`http://localhost:9292/user/${globalState.username}/posts`)
+    .then(res => res.json())
+    .then(obj => {
+      setList(obj)
+    })
+  },[])
+
   return (
-    
+    // is user logged in?
     globalState.isLoggedIn? 
     <>
+      {/* logged in  */}
       <Header />
       <Nav/>
       <img src={globalState.pfp}/> <img src={"bannerImage"}/>
@@ -66,13 +83,18 @@ export default function Profile() {
         >Chirp</button>
       </form>
       </div>
+      <ChirpList
+      list={list}
+      />
     </div>
     </> : 
     <>
+      {/* not logged in */}
      <Header />
      <Nav/>
      <img src={globalState.pfp}/> <img src={"bannerImage"}/>
-     <h6>Not logged in</h6>
+     <h6>You are not logged in</h6>
+     <p>Please Login</p>
     </>
 
     

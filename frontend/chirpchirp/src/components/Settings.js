@@ -115,6 +115,9 @@ export default function Settings() {
           >Save
         </button>
       </form>
+      
+      {/* handle deleting user account */}
+      <button>Delete Account</button>
     </div>
     </>
   )
